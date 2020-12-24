@@ -22,7 +22,6 @@ function regexify(rawrules, startrule)
         while occursin(r"(\d+)", ruleregex)
             m = match(r"(\d+)", ruleregex)
             subrule = rules[m[1]]
-
             # Recurse and replace the dict match to get the advantages of memoization
             subrulematch = regexrecurser(subrule)
             rules[subrule] = subrulematch
