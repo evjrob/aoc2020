@@ -16,8 +16,7 @@ function parseinput()
     return rules, messages
 end
 
-function regexify(rawrules, startrule)
-    rules = deepcopy(rawrules)
+function regexify(rules, startrule)
     function regexrecurser(ruleregex)
         while occursin(r"(\d+)", ruleregex)
             m = match(r"(\d+)", ruleregex)
